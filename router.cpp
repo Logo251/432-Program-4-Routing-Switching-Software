@@ -10,10 +10,10 @@ public:
     //each entry is 32 bits, which means max size is 4,294,967,295
     u_int32_t table[4][5] =
             {
-                { 4294967295, 4294967295, 4294967295, 4294967295, 8 },      // Base condition.
-                { 4294967295, 4294967295, 4294967295, 4294967295, 126 },    // Test choosing greater match over lesser.
-                { 1, 1, 1, 1, 32 },                                          // Test different address.
-                { 0, 0, 0, 0, 0 },                                          // Catch-all to test.
+                { 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 8 },      // Base condition.
+                { 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 126 },    // Test choosing greater match over lesser.
+                { 0x1, 0x1, 0x1, 0x1, 32 },                                 // Test different address.
+                { 0x0, 0x0, 0x0, 0x0, 0 },                                  // Catch-all to test.
             };
 
     struct Ipv6Packet {
